@@ -1,63 +1,84 @@
+# CRUD API with FastAPI
 
+This repository demonstrates a CRUD (Create, Read, Update, Delete) API implementation using **FastAPI**, with additional features like user authentication and token-based authorization.
 
-CRUD FastAPI
+---
 
-This repository demonstrates a CRUD (Create, Read, Update, Delete) API implementation using FastAPI with additional features like authentication and token-based authorization. It includes the following features:
+## Features
 
-Features
+### **User Authentication**
+- Password hashing with `bcrypt`.
+- JWT token generation for secure authentication.
+- OAuth2-based token authentication.
 
-User Authentication
+### **User Management**
+- Create new users.
+- Retrieve user details.
 
-User authentication with password hashing.
-JWT token generation for secure authentication.
-OAuth2-based token authentication.
-User Management
+### **Blog Management**
+- Create, read, update, and delete blogs.
+- Associate blogs with specific users.
 
-Create users.
-Retrieve user details.
-Blog Management
+### **Database**
+- SQLAlchemy models for users and blogs.
+- Database connection setup using SQLite (for local development).
 
-Create, read, update, and delete blogs.
-Associate blogs with users.
-Database
+---
 
-Models for users and blogs using SQLAlchemy.
-Database connection setup.
-Technologies Used
+## Technologies Used
 
-FastAPI: A modern Python web framework for building APIs.
-SQLAlchemy: ORM for database interaction.
-SQLite: Database used for local development.
-Pydantic: Data validation and settings management.
-bcrypt: For hashing user passwords.
-jose: For JWT token handling.
-Installation and Setup
+- **FastAPI**: A modern Python web framework for building APIs.
+- **SQLAlchemy**: ORM for seamless database interaction.
+- **SQLite**: Lightweight database for local development.
+- **Pydantic**: Data validation and settings management.
+- **bcrypt**: For securely hashing user passwords.
+- **jose**: For handling JWT tokens.
 
-Prerequisites
+---
 
+## Installation and Setup
+
+### **Prerequisites**
 Ensure you have the following installed:
+- Python 3.8 or later
+- Git (optional, for cloning the repository)
 
-Python 3.8 or later
-Git (optional, for cloning the repository)
-Steps
+---
 
-Clone the repository:
+### **Steps**
 
-git clone https://github.com/karthikzzzzzzz/CRUD-FastAPI.git
-cd CRUD-FastAPI
-Create a virtual environment and activate it:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/karthikzzzzzzz/CRUD-FastAPI.git
+   cd CRUD-FastAPI
 
+2.**Create a virtual environment and activate it**:
+On Linux/Mac:
 python -m venv env
-source env/bin/activate  # Linux/Mac
-env\Scripts\activate     # Windows
-Install dependencies:
+source env/bin/activate
+On Windows:
+python -m venv env
+env\Scripts\activate
 
+3.**Install dependencies**:
 pip install -r requirements.txt
 Run the application:
-
 uvicorn main:app --reload
-Access the API documentation at:
-
+Access the API documentation:
 Swagger UI: http://127.0.0.1:8000/docs
 ReDoc: http://127.0.0.1:8000/redoc
-You can now replace the content of your README.md file with this aligned version.
+API Endpoints
+
+**User Endpoints**
+POST /users/: Create a new user.
+GET /users/{id}: Retrieve user details by ID.
+
+
+**Blog Endpoints**
+POST /blogs/: Create a new blog.
+GET /blogs/: Retrieve all blogs.
+GET /blogs/{id}: Retrieve a specific blog by ID.
+PUT /blogs/{id}: Update a blog by ID.
+DELETE /blogs/{id}: Delete a blog by ID.
+
+   
